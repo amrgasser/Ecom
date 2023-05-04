@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class VariationOption {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
     private Variation variation;

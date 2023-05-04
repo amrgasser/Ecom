@@ -7,14 +7,11 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "category")
+@Table(name = "category", uniqueConstraints={@UniqueConstraint(columnNames={"name"})})
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Category {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+@AllArgsConstructor
+public class Category extends AbstractModel<Long>{
     @ManyToOne
     private Category parentCategoryId;
     private String name;
